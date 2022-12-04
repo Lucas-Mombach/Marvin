@@ -75,13 +75,13 @@ void piscar(){
 void piscar_l(){
   lcd.setCursor(4,0);// 5
   lcd.print("|- . O|");
-  delay(300);
+  delay(500);
   olhos_abertos();
 }
 void piscar_r(){
   lcd.setCursor(4,0);// 5
   lcd.print("|O . -|");
-  delay(300);
+  delay(500);
   olhos_abertos();
 }
 void lingua(){
@@ -91,6 +91,16 @@ void lingua(){
   delay(1500);
   lcd.setCursor(5,1);// 5
   lcd.print(" --- ");
+}
+void bolado(){
+  lcd.setCursor(4,0);// 5
+  lcd.print("|o . o|");
+  lcd.setCursor(5,1);// 7
+  lcd.print("-----");
+  delay(1000);
+  lcd.setCursor(5,1);// 7
+  lcd.print(" --- ");
+  
 }
 
 void loop()
@@ -110,7 +120,7 @@ x = analogRead (0);
   }
   //UP
   else if (x < 200) {
-    //outra expressão
+    bolado();
   }
   //DOWN
   else if (x < 400){
