@@ -62,7 +62,8 @@ void boca_semiaberta(){
 void smile(){
   lcd.setCursor(5,1);// 5
   lcd.print("-___-");
-  delay(500);
+  delay(1500);
+  lcd.clear();
 }
 void piscar(){
   delay(150);
@@ -73,11 +74,38 @@ void piscar(){
 
 void loop()
 {
-
+//default mode
 olhos_abertos();
 boca_fechada();
 delay(800);
 piscar();
+delay(800);
+// CHAMAR AS FUNÇÕES
+int x;
+x = analogRead (0);
+//RIGHT
+  if (x < 60) {
+  smile();
+  olhos_abertos();
+  boca_fechada();
+  }
+  //UP
+  else if (x < 200) {
+ 
+  }
+  //DOWN
+  else if (x < 400){
+  
+  }
+  //LEFT
+  else if (x < 600){
+  
+  }
+  //SELECT
+  else if (x < 800){
+   
+  }
+
 
 delay(4000);
 }
