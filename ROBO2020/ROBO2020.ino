@@ -43,6 +43,7 @@ void olhos_fechados(){
   lcd.setCursor(4,0);// 5
   lcd.print("|- . -|");
 }
+
 void boca_aberta(){
   
   lcd.setCursor(6,1);// 7
@@ -71,6 +72,18 @@ void piscar(){
   delay(150);
   olhos_abertos();
 }
+void piscar_l(){
+  lcd.setCursor(4,0);// 5
+  lcd.print("|- . O|");
+  delay(300);
+  olhos_abertos();
+}
+void piscar_r(){
+  lcd.setCursor(4,0);// 5
+  lcd.print("|O . -|");
+  delay(300);
+  olhos_abertos();
+}
 
 void loop()
 {
@@ -85,9 +98,7 @@ int x;
 x = analogRead (0);
 //RIGHT
   if (x < 60) {
-  smile();
-  olhos_abertos();
-  boca_fechada();
+    piscar_r();
   }
   //UP
   else if (x < 200) {
@@ -99,13 +110,15 @@ x = analogRead (0);
   }
   //LEFT
   else if (x < 600){
-  
+    piscar_l();
   }
   //SELECT
   else if (x < 800){
-   
+    smile();
+    olhos_abertos();
+    boca_fechada();
   }
 
 
-delay(4000);
+delay(1000);
 }
