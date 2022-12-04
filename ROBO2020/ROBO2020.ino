@@ -11,6 +11,27 @@ void setup()
 // Print a message to the LCD.
 // lcd.backlight();
 lcd.begin(16, 2);
+//acordando
+  olhos_fechados();
+ //bocejo
+  boca_fechada();
+  delay(800);
+  boca_semiaberta();
+  delay(350);
+  boca_aberta();
+  delay(500);
+  boca_fechada();
+  delay(300);
+  // piscar os olhos parar acordar
+  olhos_abertos();
+  delay(150);
+  olhos_fechados();
+  delay(150);
+  olhos_abertos();
+  delay(150);
+  olhos_fechados();
+  delay(150);
+  olhos_abertos();
 delay(400);//200
 }
 //funções
@@ -43,38 +64,20 @@ void smile(){
   lcd.print("-___-");
   delay(500);
 }
-
+void piscar(){
+  delay(150);
+  olhos_fechados();
+  delay(150);
+  olhos_abertos();
+}
 
 void loop()
 {
-//acordando
 
-  olhos_fechados();
- //bocejo
-  boca_fechada();
-  delay(800);
-  boca_semiaberta();
-  delay(350);
-  boca_aberta();
-  delay(500);
-  boca_fechada();
-  delay(300);
-  // piscar os olhos parar acordar
-  olhos_abertos();
-  delay(150);
-  olhos_fechados();
-  delay(150);
-  olhos_abertos();
-  delay(150);
-  olhos_fechados();
-  delay(150);
-  olhos_abertos();
-// smile
-smile();
-delay(1000);
-lcd.clear();
 olhos_abertos();
 boca_fechada();
+delay(800);
+piscar();
 
 delay(4000);
 }
