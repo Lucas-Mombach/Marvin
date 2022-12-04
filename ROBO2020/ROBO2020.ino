@@ -84,6 +84,14 @@ void piscar_r(){
   delay(300);
   olhos_abertos();
 }
+void lingua(){
+  olhos_fechados();
+  lcd.setCursor(5,1);// 5
+  lcd.print("< U >");
+  delay(1500);
+  lcd.setCursor(5,1);// 5
+  lcd.print(" --- ");
+}
 
 void loop()
 {
@@ -102,11 +110,11 @@ x = analogRead (0);
   }
   //UP
   else if (x < 200) {
- 
+    //outra expressão
   }
   //DOWN
   else if (x < 400){
-  
+    lingua();
   }
   //LEFT
   else if (x < 600){
