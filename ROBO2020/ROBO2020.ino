@@ -38,6 +38,12 @@ void boca_semiaberta(){
   lcd.print("( )");
 }
 
+void smile(){
+  lcd.setCursor(5,1);// 5
+  lcd.print("-___-");
+  delay(500);
+}
+
 
 void loop()
 {
@@ -63,7 +69,12 @@ void loop()
   olhos_fechados();
   delay(150);
   olhos_abertos();
-
+// smile
+smile();
+delay(1000);
+lcd.clear();
+olhos_abertos();
+boca_fechada();
 
 delay(4000);
 }
